@@ -1,103 +1,28 @@
 # Album-Rankings-System
-**Object Oriented Programming Coursework, Second Year of Computer Science**
-1. The program opens the 'datafile.txt', parses the characters in the data file, deciphers them to normal text and prints the decoded passage of text to the console and in a 'results.txt' file. Newlines and blank lines must be maintained in the decoding.
+ **Object Oriented Programming Coursework, Second Year of Computer Science**
+ 1. The program parses the data file, create an object for each album, and store all the objects into a suitable collection.
 
-<img src="README_Images/Tables.png" width=800 height=400>
+   Below is a partial UML class of the project
 
-  Using the rules defined by the two tables, the application deciphers this: 
-- V6 C36V2C22C6V4C28V4C6 C17V7C21V3C17V11 V1C29 V1 C3C17V7V9C5
+   <img src="README_Images/UML.png" heigh=400 width=200>
 
-C32C11V1C31 C7C17V7V1C31C29 V7C21 C11V5C9C11 V7C33V3C27 C33V1C17V3C29 V1C21C5 C11V5C17C17C29
+ 2. Program presents the User with a console-based menu to interact with the data set.
+   This menu will loop until the User enters a character to exit the menu (e.g. as illustrated below)
 
-C36C11V3C21 V1C17C17 V1C31 V7C21C3V3 V6 C29V1C35 V1 C3C27V7C35C5
+   <img src="README_Images/Prompt.png" heigh=100 width=200>
 
-V2 C11V7C29C31 V7C7 C9V7C17C5V3C21 C5V1C7C7V7C5V5C17C29
+ 3. The User can simply exit the program by entering zero. The three other menu options allow the User to inspect the information in the data set (note again that this program is entirely read-only and there was no requirement to add, update or delete any part of the data set).
 
-C2V3C29V5C5V3 C31C11V3 C17V1C15V3 C1V3C21V3V1C31C11 C31C11V3 C31C27V3V3C29
+   Below are images of the necessary interactions of the program with respect to the options mentioned above.
 
-C8C17V9C31C31V3C27V5C21C9 V1C21C5 C5V1C21C3V5C21C9 V5C21 C31C11V3 C1C27V3V3C39V3
+ - &emsp; Listing the albums
 
-C4V7C21C31V5C21V9V7V9C29 V1C29 C31C11V3 C29C31V1C27C29 C31C11V1C31 C29C11V5C21V3
+   &emsp;&emsp; <img src="README_Images/ListOfAlbums.png" heigh=600 width=600>
 
-V2C21C5 C31C35V5C21C15C17V3 V7C21 C31C11V3 C19V5C17C15V11 C35V1V11
+ - &emsp; Selecting an album
 
-C32C11V3V11 C29C31C27V3C31C3C11V3C5 V5C21 C21V3C33V3C27 V3C21C5V5C21C9 C17V5C21V3
+   &emsp;&emsp; <img src="README_Images/SelectAlbum.png" heigh=600 width=600>
 
-V2C17V7C21C9 C31C11V3 C19V1C27C9V5C21 V7C7 V1 C1V1V11
+ - &emsp; Search a title
 
-C32V3C21 C31C11V7V9C29V1C21C5 C29V1C35 V6 V1C31 V1 C9C17V1C21C3V3
-
-C32V7C29C29V5C21C9 C31C11V3V5C27 C11V3V1C5C29 V5C21 C29C23C27V5C9C11C31C17V11 C5V1C21C3V3
-
-C32C11V3 C35V1C33V3C29 C1V3C29V5C5V3 C31C11V3C19 C5V1C21C3V3C5 C1V9C31 C31C11V3V11
-
-V8V9C31 C5V5C5 C31C11V3 C29C23V1C27C15C17V5C21C9 C35V1C33V3C29 V5C21 C9C17V3V3
-
-V2 C23V7V3C31 C3V7V9C17C5 C21V7C31 C1V9C31 C1V3 C9V1V11
-
-V6C21 C29V9C3C11 V1 C13V7C3V9C21C5 C3V7C19C23V1C21V11
-
-V6 C9V1C39V3C5 V1C21C5 C9V1C39V3C5 C1V9C31 C17V5C31C31C17V3 C31C11V7V9C9C11C31
-
-C36C11V1C31 C35V3V1C17C31C11 C31C11V3 C29C11V7C35 C31V7 C19V3 C11V1C5 C1C27V7V9C9C11C31
-
-C8V7C27 V7C7C31 C35C11V3C21 V7C21 C19V11 C3V7V9C3C11 V6 C17V5V3
-
-V6C21 C33V1C3V1C21C31 V7C27 V5C21 C23V3C21C29V5C33V3 C19V7V7C5
-
-C32C11V3V11 C7C17V1C29C11 V9C23V7C21 C31C11V1C31 V5C21C35V1C27C5 V3V11V3
-
-C36C11V5C3C11 V5C29 C31C11V3 C1C17V5C29C29 V7C7 C29V7C17V5C31V9C5V3
-
-V2C21C5 C31C11V3C21 C19V11 C11V3V1C27C31 C35V5C31C11 C23C17V3V1C29V9C27V3 C7V5C17C17C29
-
-V2C21C5 C5V1C21C3V3C29 C35V5C31C11 C31C11V3 C5V1C7C7V7C5V5C17C29
-
-To this:
-- I WANDERED lonely as a cloud
-  
-  That floats on high over vales and hills
-  
-  When all at once I saw a crowd
-  
-  A host of golden daffodils
-  
-  Beside the lake beneath the trees
-  
-  Fluttering and dancing in the breeze
-  
-  Continuous as the stars that shine
-  
-  And twinkle on the milky way
-  
-  They stretched in never ending line
-  
-  Along the margin of a bay
-  
-  Ten thousand saw I at a glance
-  
-  Tossing their heads in sprightly dance
-  
-  The waves beside them danced but they
-  
-  Out did the sparkling waves in glee
-  
-  A poet could not but be gay
-  
-  In such a jocund company
-  
-  I gazed and gazed but little thought
-  
-  What wealth the show to me had brought
-  
-  For oft when on my couch I lie
-  
-  In vacant or in pensive mood
-  
-  They flash upon that inward eye
-  
-  Which is the bliss of solitude
-  
-  And then my heart with pleasure fills
-  
-  And dances with the daffodils
+   &emsp;&emsp; <img src="README_Images/SearchTitle.png" heigh=600 width=600>
